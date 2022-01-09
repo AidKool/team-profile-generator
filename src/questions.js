@@ -16,6 +16,15 @@ const employeeQuestions = [
   },
 ];
 
+const addNewEmployee = [
+  {
+    type: 'list',
+    message: 'Select if you would like to add a new employee or exit the application',
+    name: 'addNewEmployee',
+    choices: ['Add an engineer', 'Add an intern', 'Exit the application'],
+  },
+];
+
 const managerQuestions = [
   ...employeeQuestions,
   {
@@ -23,6 +32,7 @@ const managerQuestions = [
     message: 'Enter their office number:',
     name: 'officeNumber',
   },
+  ...addNewEmployee,
 ];
 
 const engineerQuestions = [
@@ -32,6 +42,7 @@ const engineerQuestions = [
     message: 'Enter their github username:',
     name: 'github',
   },
+  ...addNewEmployee,
 ];
 
 const internQuestions = [
@@ -41,6 +52,7 @@ const internQuestions = [
     message: 'Enter their school:',
     name: 'school',
   },
+  ...addNewEmployee,
 ];
 
 module.exports = {
