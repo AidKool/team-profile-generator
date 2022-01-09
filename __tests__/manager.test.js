@@ -2,7 +2,7 @@ const Manager = require('../lib/manager');
 
 describe('Manager', function () {
   describe('Initialization', function () {
-    it('should return a "Manager" object containing properties named "name", "id", and "email"', function () {
+    it('should return a "Manager" object containing properties named "name", "id", "email", and "officeNumber"', function () {
       const name = 'Paul';
       const id = '3';
       const email = 'paul@email.com';
@@ -49,7 +49,7 @@ describe('Manager', function () {
   });
 
   describe('getOfficeNumber', function () {
-    it('should return the "Manager" email', function () {
+    it('should return the "Manager" officeNumber', function () {
       const name = 'Paul';
       const id = '3';
       const email = 'paul@email.com';
