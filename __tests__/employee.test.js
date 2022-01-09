@@ -2,7 +2,7 @@ const Employee = require('../lib/employee');
 
 describe('Employee', function () {
   describe('Initialization', function () {
-    it('should return an object containing properties named "name", "id", and "email"', function () {
+    it('should return an "Employee" object containing properties named "name", "id", and "email"', function () {
       const name = 'Paul';
       const id = '3';
       const email = 'paul@email.com';
