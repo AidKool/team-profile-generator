@@ -1,0 +1,37 @@
+/* import Bulma.css */
+@import 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css';
+
+/* import Font Awesome */
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+
+:root {
+  /* GLOBAL */
+  --document-min-width: 375px;
+
+  /* CARDS */
+  --card-max-width: 450px;
+
+  /* COLOURS */
+  --gondola: #363636;
+  --white: #ffffff;
+}
+
+html,
+body {
+  min-width: var(--document-min-width);
+  color: var(--gondola);
+}
+
+.card {
+  max-width: var(--card-max-width);
+  margin: 0 auto;
+}
+
+.card-header p {
+  font-weight: 900;
+}
+
+.card-content > p {
+  background-color: var(--white);
+  padding: calc(1rem / 3);
+}
