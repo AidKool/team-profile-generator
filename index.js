@@ -1,57 +1,18 @@
-const Manager = require('./lib/manager');
-const Engineer = require('./lib/engineer');
-const Intern = require('./lib/intern');
-const inquirer = require('inquirer');
-
-const { managerQuestions, engineerQuestions, internQuestions } = require('./src/questions');
-
-let employees = [];
+const addEmployee = require('./src/addEmployee');
 
 async function init() {
+  let employeeList = [];
   console.log('------- Team Profile Generator -------');
-  let answers = await addManager();
-  while (answers.addNewEmployee !== 'Exit the application') {
-    switch (answers.addNewEmployee) {
+  let addNewEmployee = await addEmployee('manager', employeeList);
+  while (addNewEmployee !== 'Exit the application') {
+    switch (addNewEmployee) {
       case 'Add an engineer':
-        answers = await addEngineer();
+        addNewEmployee = await addEmployee('engineer', employeeList);
       case 'Add an intern':
-        answers = await addIntern();
+        addNewEmployee = await addEmployee('intern', employeeList);
     }
   }
-  console.log(employees);
-}
-
-async function askQuestions(questions) {
-  try {
-    const answers = await inquirer.prompt(questions);
-    return answers;
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
-
-async function addManager() {
-  console.log('Add a manager');
-  let answers = await askQuestions(managerQuestions);
-  const newManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-  employees.push(newManager);
-  return answers;
-}
-
-async function addEngineer() {
-  console.log('Add an engineer');
-  answers = await askQuestions(engineerQuestions);
-  const newEngineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
-  employees.push(newEngineer);
-  return answers;
-}
-
-async function addIntern() {
-  console.log('Add an intern');
-  answers = await askQuestions(internQuestions);
-  const newIntern = new Intern(answers.name, answers.id, answers.email, answers.school);
-  employees.push(newIntern);
-  return answers;
+  console.log(employeeList);
 }
 
 // initialize the application
