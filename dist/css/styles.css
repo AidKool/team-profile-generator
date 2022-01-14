@@ -33,5 +33,5 @@ body {
 
 .card-content > p {
   background-color: var(--white);
-  padding: calc(1rem / 3);
+  margin: 1.2rem 0;
 }
