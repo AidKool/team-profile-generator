@@ -1,4 +1,5 @@
 const addEmployee = require('./src/addEmployee');
+const renderHTMLPage = require('./src/renderHTMLpage');
 
 async function init() {
   let employeeList = [];
@@ -13,6 +14,8 @@ async function init() {
     }
   }
   console.log(employeeList);
+  await renderHTMLPage(employeeList);
+  console.log('Employee page generated successfully');
 }
 
 // initialize the application
