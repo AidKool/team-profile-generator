@@ -9,8 +9,10 @@ async function init() {
     switch (addNewEmployee) {
       case 'Add an engineer':
         addNewEmployee = await addEmployee('engineer', employeeList);
+        break;
       case 'Add an intern':
         addNewEmployee = await addEmployee('intern', employeeList);
+        break;
     }
   }
   console.log(employeeList);
