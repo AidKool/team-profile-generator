@@ -7,6 +7,7 @@ const writeFilePromise = util.promisify(fs.writeFile);
 const { renderManagerCard, renderEngineerCard, renderInternCard } = require('./renderCards');
 
 async function renderHTMLPage(employeeList) {
+  const managerName = employeeList[0].getName();
   const html = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +23,7 @@ async function renderHTMLPage(employeeList) {
         <div class="navbar-brand">
           <!-- brand -->
           <div class="navbar-item">
-            <h1 class="h1">Team Profile</h1>
+            <h1 class="h1 title has-text-white">${managerName}'s Team Profile</h1>
           </div>
         </div>
       </div>
